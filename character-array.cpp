@@ -40,7 +40,3 @@ void replaceCharacterArray(char** arr1, char** arr2) {
     cout << "\nInside the function:\nValue of first character array: " << *arr1;
     cout << "\nValue of second character array: " << *arr2;
 }
-
-int sizeOf(char* array) {
-    
-}
