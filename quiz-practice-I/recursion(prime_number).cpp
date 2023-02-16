@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool primeNumber(int n) {
+bool isPrime(int n) {
     static int i;
     if (n == 1) {
         return false;
@@ -20,6 +20,8 @@ bool primeNumber(int n) {
             }
         }
     }
+
+    isPrime(n);
 }
 
 int main() {
@@ -28,7 +30,7 @@ int main() {
     int num;
     cout << "\nEnter a number: ";
     cin >> num;
-    cout << endl << primeNumber(num);
+    cout << endl << isPrime(num);
 
     return 0;
 }

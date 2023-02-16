@@ -16,6 +16,14 @@ void pattern(int n) {
     }
 }
 
+int bin_2_int(int n) {
+    if (n == 0) {
+        return 0;
+    } else {
+        return (n % 10 + 2 * bin_2_int(n / 10));
+    }
+}
+
 int main()
 {
     int num;

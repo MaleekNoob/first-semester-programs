@@ -2,7 +2,7 @@
 #include <conio.h>
 using namespace std;
 
-void input(string &str) {
+string input() {
     string mainStr;
     char character;
 
@@ -19,8 +19,7 @@ void input(string &str) {
         }
     } while (static_cast<int>(character) != 13);
     
-
-    str = mainStr;
+    return mainStr;
 }
 
 struct employee {
@@ -35,19 +34,23 @@ struct boss {
     string name;
     string companyName;
 
-} boss1;
+};
 
 int main() {
 
     employee *ptr1, person;
-    boss *ptr2;
+    boss *ptr2, boss1;
+
+    string str1, str2;
 
     cout << "\nEnter employee's name: ";
-    input(person.name);
+    str1 = input();
+    // cin >> person.name;
     cout << "\nEnter boss company name: ";
-    input(boss1.companyName);
-    cout << "\nEmployee name: " << person.name;
-    cout << "\nBoss company name: " << boss1.companyName;
+    str2 = input();
+    // cin >> boss1.companyName;
+    cout << "\nEmployee name: " << str1;
+    cout << "\nBoss company name: " << str2;
 
     return 0;
 }
