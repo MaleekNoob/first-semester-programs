@@ -23,6 +23,15 @@ public:
         this->age = age;
     }
 
+    customer(customer &a) {
+        id = a.id;
+        name = a.name;
+        address = a.address;
+        phone = a.phone;
+        age = a.age;
+        
+    }
+
     void setID(string id) {
         this->id = id;
     }
@@ -76,28 +85,31 @@ int main() {
 
     string id, name, address, phone;
     int age;
-    customer c[3];
+    customer b;
 
-    for (int i = 0; i < 3; i++) {
+    cout << "Enter ID: ";
+    cin >> id;
+    b.setID(id);
+    cout << "Enter Name: ";
+    cin >> name;
+    b.setName(name);
+    cout << "Enter Address: ";
+    cin >> address;
+    b.setAddress(address);
+    cout << "Enter Phone: ";
+    cin >> phone;
+    b.setPhone(phone);
+    cout << "Enter Age: ";
+    cin >> age;
+    b.setAge(age);
 
-        cout << "\nEnter ID: ";
-        cin >> id;
-        cout << "\nEnter name: ";
-        cin >> name;
-        cout << "\nEnter address: ";
-        cin >> address;
-        cout << "\nEnter phone: ";
-        cin >> phone;
-        cout << "\nEnter age: ";
-        cin >> age;
 
-        c[i]  = customer(id, name, address, phone, age);
-    }
-
-    for (int i = 0; i < 3; i++) {
-        cout << "--------------------------------------------" << endl;
-        c[i].display();
-    }
+    customer c("1", "2", "3", "4", 5);
+    customer a(b);
+    a.display();
+    b.display();
+    c.display();
+    
 
     return 0;
 }
