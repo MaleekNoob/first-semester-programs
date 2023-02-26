@@ -31,7 +31,8 @@ int main() {
     int b = 10;
     A a(b);
     A &aRef = a;
-    aRef.display();
+    A* RefPtr = &aRef;
+    RefPtr->display();
 
 
     return 0;
