@@ -3,8 +3,8 @@ using namespace std;
 
 class customer {
 private:
+    int* age = new int;
     string id, name, address, phone;
-    int age;
 
 public:
     customer() {
@@ -15,21 +15,12 @@ public:
         age = 0;
     }
 
-    customer(string id, string name, string address, string phone, int age) {
+    customer(string id, string name, string address, string phone, int Age) {
         this->id = id;
         this->name = name;
         this->address = address;
         this->phone = phone;
-        this->age = age;
-    }
-
-    customer(customer &a) {
-        id = a.id;
-        name = a.name;
-        address = a.address;
-        phone = a.phone;
-        age = a.age;
-        
+        *age = Age;
     }
 
     void setID(string id) {
@@ -48,8 +39,12 @@ public:
         this->phone = phone;
     }
 
-    void setAge(int age) {
-        this->age = age;
+    void setAge(int *Age) {
+        *age = *Age;
+    }
+
+    void setAge(int Age) {
+        *age = Age;
     }
 
     string getID() {
@@ -69,6 +64,10 @@ public:
     }
 
     int getAge() {
+        return *age;
+    }
+
+    int* getAgePointer() {
         return age;
     }
 
@@ -77,39 +76,27 @@ public:
         cout << "Name: " << name << endl;
         cout << "Address: " << address << endl;
         cout << "Phone: " << phone << endl;
-        cout << "Age: " << age << endl;
+        cout << "Age: " << *age << endl;
     }
 };
 
 int main() {
 
-    string id, name, address, phone;
-    int age;
-    customer b;
+    int age = 31;
+    int *agePtr = &age;
+    customer c1;
+    c1.setID("123");
+    c1.setName("John");
+    c1.setAddress("123, Main Street");
+    c1.setPhone("1234567890");
+    c1.setAge(agePtr);
 
-    cout << "Enter ID: ";
-    cin >> id;
-    b.setID(id);
-    cout << "Enter Name: ";
-    cin >> name;
-    b.setName(name);
-    cout << "Enter Address: ";
-    cin >> address;
-    b.setAddress(address);
-    cout << "Enter Phone: ";
-    cin >> phone;
-    b.setPhone(phone);
-    cout << "Enter Age: ";
-    cin >> age;
-    b.setAge(age);
+    customer c2(c1);
+    age = 40;
+    c2.setAge(agePtr);
 
-
-    customer c("1", "2", "3", "4", 5);
-    customer a(b);
-    a.display();
-    b.display();
-    c.display();
-    
+    c1.display();
+    c2.display();
 
     return 0;
 }
