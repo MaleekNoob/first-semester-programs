@@ -48,8 +48,8 @@ int calculateJump(int arr[], int N) {
 
 int main() {
 
-    int N = 6;
-    int arr[N] = {1, 4, 3, 2, 6, 7};
+    int N = 18;
+    int arr[N] = {1, 4, 3, 2, 6, 7, 3, 2, 6, 7, 6, 2, 1, 5, 3, 6, 8, 5};
     cout << calculateJump(arr, N);
 
     return 0;
