@@ -9,7 +9,7 @@ class person {
 
     public:
     person() {
-        name = "N/A";
+        name = "0";
         age = 0;
     }
 
