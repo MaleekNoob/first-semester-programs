@@ -79,10 +79,16 @@ class Rational {
                     _numenator %= i;
                 }
             }
+            denominator = _denominator;
+            numerator = _numenator;
 
         }
 
-        denominator = _denominator;
-        numerator = _numenator;
+        void PrintRationalNumber() {
+
+            cout << endl << numerator << " / " << denominator << endl;
+            
+        }
+
 
 };
