@@ -20,7 +20,7 @@ class Rational {
                 less = n;
             }
 
-            for (int i = 0; i < less; i++) {
+            for (int i = 0; i <= less; i++) {
                 if ((n % i == 0) && (d % i == 0)) {
                     d %= i;
                     n %= i;
@@ -43,7 +43,7 @@ class Rational {
                 less = _numenator;
             }
 
-            for (int i = 0; i < less; i++) {
+            for (int i = 0; i <= less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
                     _denominator %= i;
                     _numenator %= i;
@@ -67,7 +67,7 @@ class Rational {
                 less = _numenator;
             }
 
-            for (int i = 0; i < less; i++) {
+            for (int i = 0; i <= less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
                     _denominator %= i;
                     _numenator %= i;
@@ -91,7 +91,7 @@ class Rational {
                 less = _numenator;
             }
 
-            for (int i = 0; i < less; i++) {
+            for (int i = 0; i <= less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
                     _denominator %= i;
                     _numenator %= i;
