@@ -10,9 +10,9 @@ class Date {
     public:
 
     Date() {
-        day = NULL;
-        month = NULL;
-        year = NULL;
+        day = 0;
+        month = 0;
+        year = 0;
     }
 
     Date(int d, int m, int y):day(d), month(m), year(y) {}
