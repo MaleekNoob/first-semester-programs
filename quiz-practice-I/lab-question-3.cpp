@@ -39,13 +39,23 @@ class Sphere {
         return (2 * PI * radius);
     }
 
+    void display() {
+        cout << "\nDiameter: " << getDiameter();
+        cout << "\nArea: " << getArea();
+        cout << "\nVolumn: " << GetVolume();
+        cout << "\nCircumference: " << GetCircumference();
+    }
+
 };
 
 int main() {
 
     double r;
-    Sphere s;
     cout << "\nEnter radius: ";
     cin >> r;
+    Sphere s(r);
+    s.display();
+
+    return 0;
 
 }
