@@ -6,6 +6,7 @@ class Date {
     int day;
     int month;
     int year;
+    string datefrmt;
 
     public:
     Date() {
@@ -21,38 +22,66 @@ class Date {
     }
 
     void AddDays(int days) {
-        if (this->day += days < 31) {
-            this->day += days;
+        day += days;
+        if (day < 31) {
+            day += days;
         } else {
-            this->day = (this->day += days) - 31;
-            this->month++;
+            day = (this->day + days) - 31;
+            month++;
+        }
+    }
+
+    void add(int months, int days) {
+        day += days;
+        if (day < 31) {
+            day += days;
+        } else {
+            day = (this->day + days) - 31;
+            month++;
+        }
+
+        month += months;
+        if (!(month < 12)) {
+            month = (month + months) - 12;
+            year++;
         }
     }
 
     void AddWeeks(int weeks) {
-        if (this->day += (weeks * 7) < 31) {
-            this->day += (weeks * 7);
+        day += (weeks * 7);
+        if (day < 31) {
+            day += (weeks * 7);
         } else {
-            this->day = (this->day += (weeks * 7)) - 31;
-            this->month++;
+            day = day - 31;
+            month++;
         }
     }
 
     void SubtractDays(int days) {
-        if (this->day -= days > 0) {
+        this->day -= days;
+        if (day > 0) {
             this->day -= days;
         } else {
-            this->day = (this->day -= days) + 31;
-            this->month--;
+            day = (day) + 31;   
+            month--;
         }
     }
 
     void Subtract(int month, int days) {
-        if (this->day -= days > 0) {
-            this->day -= days;
+        day -= days;
+        if (day > 0) {
+            day -= days;
         } else {
-            this->day = (this->day -= days) + 31;
-            this->month--;
+            day = day + 31;
+            month--;
+        }
+
+        month -= month;
+        if (month > 0) {
+            month -= month;
+        } else {
+            month = month + 12;
+            year--;
         }
     }
 
