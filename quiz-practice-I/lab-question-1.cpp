@@ -16,7 +16,12 @@ class Holiday {
         }
 
         void setName(string s) {
-            this->name = s;
+            //name should not be greater than 50 characters
+            if (s.length() <= 50) {
+                this->name = s;
+            } else {
+                cout << "Name should not be greater than 50 characters" << endl;
+            }
         }
 
         string getName() {
@@ -24,7 +29,12 @@ class Holiday {
         }
 
         void setDay(int u) {
-            this->day = u;
+            //day should never be negitive
+            if (u >= 0) {
+                this->day = u;
+            } else {
+                cout << "Day should never be negitive" << endl;
+            }
         }
 
         int getDay() {
@@ -32,6 +42,11 @@ class Holiday {
         }
 
         void setMonth(string p) {
+            if (p.length() <= 10) {
+                this->month = p;
+            } else {
+                cout << "Month should not be greater than 10 characters" << endl;
+            }
             this->month = p;
         }
 
