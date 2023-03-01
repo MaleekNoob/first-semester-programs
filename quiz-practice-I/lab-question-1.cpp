@@ -45,7 +45,6 @@ class Holiday {
             } else {
                 cout << "Month should not be greater than 10 characters" << endl;
             }
-            this->month = p;
         }
 
         string setMonth() {
