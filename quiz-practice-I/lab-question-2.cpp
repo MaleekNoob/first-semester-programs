@@ -37,6 +37,12 @@ class Rational {
             _numenator = ((n1 * d2) + (n2 * d1));
             _denominator = (d1 * d2);
 
+            if (_numenator > _denominator) {
+                less = _denominator;
+            } else {
+                less = _numenator;
+            }
+
             for (int i = 0; i < less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
                     _denominator %= i;
@@ -54,6 +60,12 @@ class Rational {
             int _numenator = 0, _denominator = 0;
             _numenator = (n1 * n2);
             _denominator = (d1 * d2);
+
+            if (_numenator > _denominator) {
+                less = _denominator;
+            } else {
+                less = _numenator;
+            }
 
             for (int i = 0; i < less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
@@ -73,6 +85,12 @@ class Rational {
             _numenator = (n1 * d2);
             _denominator = (d1 * n2);
 
+            if (_numenator > _denominator) {
+                less = _denominator;
+            } else {
+                less = _numenator;
+            }
+
             for (int i = 0; i < less; i++) {
                 if ((_numenator % i == 0) && (_denominator % i == 0)) {
                     _denominator %= i;
@@ -87,7 +105,7 @@ class Rational {
         void PrintRationalNumber() {
 
             cout << endl << numerator << " / " << denominator << endl;
-            
+
         }
 
 
