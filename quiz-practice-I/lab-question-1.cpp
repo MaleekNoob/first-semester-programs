@@ -16,7 +16,6 @@ class Holiday {
         }
 
         void setName(string s) {
-            //name should not be greater than 50 characters
             if (s.length() <= 50) {
                 this->name = s;
             } else {
@@ -29,7 +28,6 @@ class Holiday {
         }
 
         void setDay(int u) {
-            //day should never be negitive
             if (u >= 0) {
                 this->day = u;
             } else {
