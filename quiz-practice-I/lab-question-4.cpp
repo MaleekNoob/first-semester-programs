@@ -56,15 +56,6 @@ class Date {
         }
     }
 
-    void AddMonths(int months) {
-        if (this->month += months < 12) {
-            this->month += months;
-        } else {
-            this->month = (this->month += months) - 12;
-            this->year++;
-        }
-    }
-
     bool isLeapYear() {
         if (((this->year % 4 == 0) && (this->year % 100 != 0)) || (this->year % 400 == 0)) {
             return true;
