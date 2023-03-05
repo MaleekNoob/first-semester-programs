@@ -1,35 +1,119 @@
 #include <iostream>
 using namespace std;
 
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void swap(float a, float b) {
+    float temp = a;
+    a = b;
+    b = temp;
+}
+
+void swap(string a, string b) {
+    string temp = a;
+    a = b;
+    b = temp;
+}
 
 class sort {
+    private:
+    int *intArr = new int;
+    float *floatArr = new float;
+    string *stringArr = new string;
 
     public: 
     sort() {}
     void sortArray(int size, int type);
+    void printArray(int size, int type);
 
 };
 
 void sort::sortArray(int size, int type) {
+
     switch (type)
     {
     case 1:
-        int* arr = new int[size];
+        intArr = new int[size];
+        for (int i = 0; i < size; i++) {
+            cin >> intArr[i];
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                swap(intArr[i], intArr[j]);
+            }
+        }
+
+        printArray(size, type);
         break;
 
     case 2:
-        float* arr = new float[size];
+        floatArr = new float[size];
+        for (int i = 0; i < size; i++) {
+            cin >> floatArr[i];
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                swap(floatArr[i], floatArr[j]);
+            }
+        }
+
+        printArray(size, type);
         break;
 
     case 3:
-        string* arr = new string[size];
+        stringArr = new string[size];
+        for (int i = 0; i < size; i++) {
+            cin >> stringArr[i];
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                swap(stringArr[i], stringArr[j]);
+            }
+        }
+
+        printArray(size, type);
         break;
     
     default:
         break;
     }
-    for (int i = 0; i < size; i++) {
-        // cin >> arr;
+
+
+    delete[] intArr;
+    delete[] floatArr;
+    delete[] stringArr;
+}
+
+void sort::printArray(int size, int type) {
+    switch (type)
+    {
+    case 1:
+        for (int i = 0; i < size; i++) {
+            cout << endl << intArr[i];
+        }
+        break;
+    
+    case 2:
+        for (int i = 0; i < size; i++) {
+            cout << endl << floatArr[i];
+        }
+        break;
+
+    case 3:
+        for (int i = 0; i < size; i++) {
+            cout << endl << stringArr[i];
+        }
+        break;
+
+    default:
+        break;
     }
 }
 
