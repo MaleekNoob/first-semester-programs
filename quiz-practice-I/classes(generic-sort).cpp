@@ -3,17 +3,35 @@ using namespace std;
 
 
 class sort {
-    private:
-    int* intArr = new int;
-    float* floatArr = new float;
-    string* stringArr = new string;
 
     public: 
     sort() {}
-    sort(int* a, float* b, string* c):intArr(a), floatArr(b), stringArr(c) {}
     void sortArray(int size, int type);
 
 };
+
+void sort::sortArray(int size, int type) {
+    switch (type)
+    {
+    case 1:
+        int* arr = new int[size];
+        break;
+
+    case 2:
+        float* arr = new float[size];
+        break;
+
+    case 3:
+        string* arr = new string[size];
+        break;
+    
+    default:
+        break;
+    }
+    for (int i = 0; i < size; i++) {
+        // cin >> arr;
+    }
+}
 
 int main() {
 
