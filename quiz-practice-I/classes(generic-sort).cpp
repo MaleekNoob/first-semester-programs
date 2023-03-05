@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-void swap(int a, int b) {
+void swap(int &a, int &b) {
     int temp = a;
     a = b;
     b = temp;
 }
 
-void swap(float a, float b) {
+void swap(float &a, float &b) {
     float temp = a;
     a = b;
     b = temp;
 }
 
-void swap(string a, string b) {
+void swap(string &a, string &b) {
     string temp = a;
     a = b;
     b = temp;
@@ -44,7 +44,8 @@ void sort::sortArray(int size, int type) {
 
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++) {
-                swap(intArr[i], intArr[j]);
+                if (intArr[i] > intArr[j])
+                    swap(intArr[i], intArr[j]);
             }
         }
 
@@ -59,7 +60,8 @@ void sort::sortArray(int size, int type) {
 
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++) {
-                swap(floatArr[i], floatArr[j]);
+                if (floatArr[i] > floatArr[j])
+                    swap(floatArr[i], floatArr[j]);
             }
         }
 
@@ -74,7 +76,8 @@ void sort::sortArray(int size, int type) {
 
         for (int i = 0; i < size; i++) {
             for (int j = i; j < size; j++) {
-                swap(stringArr[i], stringArr[j]);
+                if (stringArr[i] > stringArr[j])
+                    swap(stringArr[i], stringArr[j]);
             }
         }
 
