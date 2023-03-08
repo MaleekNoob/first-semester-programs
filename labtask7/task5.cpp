@@ -7,11 +7,11 @@ class Fraction {
     int denom;
     
     
-    int gcd() {
+    int gcd(int n, int m) {
         int gcd = 1;
 
-        for (int i = 1; (i <= numer) && (i <= denom); i++) {
-            if ((numer % i == 0) && (denom % i == 0)) {
+        for (int i = 1; (i <= n) && (i <= m); i++) {
+            if ((n % i == 0) && (m % i == 0)) {
                 gcd = i;
             }
         }
@@ -34,8 +34,8 @@ class Fraction {
             /*do nothing*/
         }
 
-        numer /= gcd();
-        denom /= gcd();
+        numer /= gcd(numer, denom);
+        denom /= gcd(numer, denom);
     }
 
     public:
@@ -96,9 +96,3 @@ class Fraction {
     }
 
 };
-
-int main() {
-
-
-    return 0;
-}

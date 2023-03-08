@@ -58,9 +58,3 @@ class Account {
     }
 
 };
-
-int main() {
-
-
-    return 0;
-}

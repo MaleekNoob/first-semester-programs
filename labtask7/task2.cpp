@@ -169,9 +169,3 @@ class Semester {
         }
     }
 };
-
-int main() {
-
-
-    return 0;
-}

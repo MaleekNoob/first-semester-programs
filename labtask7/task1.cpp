@@ -50,10 +50,3 @@ class Laptop {
         cout << "Company Name: " << getCompay_name() << endl;
     }
 };
-
-int main() {
-    
-    
-    
-    return 0;
-}
