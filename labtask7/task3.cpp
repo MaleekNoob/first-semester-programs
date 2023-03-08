@@ -8,7 +8,7 @@ class Account {
     static int base;
 
     public:
-    Account() : account_number(base) {
+    Account() {
         this->balance = 0;
         base += 100000;
         account_number = base;
