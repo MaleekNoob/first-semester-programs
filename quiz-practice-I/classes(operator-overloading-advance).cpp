@@ -28,6 +28,8 @@ class Calculation {
     }
 
     void operator ++ (int i) {
+        i=0;
+        i++;
         a++;
     }
 
