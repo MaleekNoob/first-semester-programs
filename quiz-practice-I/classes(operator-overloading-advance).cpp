@@ -27,9 +27,13 @@ class Calculation {
         return temp;
     }
 
-    void operator ++ (int i) {
-        i=0;
+    void operator ++ () {
+        // i=0;
         a++;
+    }
+
+    void operator ~ () {
+        display();
     }
 
     // int operator + (int a) {
@@ -50,9 +54,8 @@ int main() {
 
     Calculation meow(4), meow1(2), meow2(4), meow3(4);
     Calculation meowN = meow + meow1 + meow2 + meow3;
-    meowN.display();
-    meowN++;
-    meowN.display();
+    ++meowN;
+    ~meowN;
 
 
     return 0;
