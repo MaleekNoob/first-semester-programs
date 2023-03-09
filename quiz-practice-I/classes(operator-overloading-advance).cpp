@@ -27,6 +27,18 @@ class Calculation {
         return temp;
     }
 
+    Calculation operator * (Calculation obj) {
+        Calculation temp;
+        temp.a = a * obj.a;
+        return temp;
+    }
+
+    Calculation operator / (Calculation obj) {
+        Calculation temp;
+        temp.a = a / obj.a;
+        return temp;
+    }
+
     void operator++() {
         a++;
     }
@@ -57,8 +69,8 @@ int operator+(Calculation obj) {
 int main() {
 
     Calculation meow(4), meow1(2), meow2(4), meow3(4);
-    Calculation meowN = meow + meow1 + meow2 + meow3;
-    ++meowN;
+    Calculation meowN = (meow * meow1) + (meow2 / meow3);
+    
     ~meowN;
 
 
