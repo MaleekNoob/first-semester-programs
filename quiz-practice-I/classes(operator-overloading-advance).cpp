@@ -29,7 +29,6 @@ class Calculation {
 
     void operator ++ (int i) {
         i=0;
-        i++;
         a++;
     }
 
@@ -43,9 +42,9 @@ class Calculation {
 
 };
 
-// void Calculation::operator ++ () {
-//     a++;
-// }
+int operator+(Calculation obj) {
+    return obj.getA();
+}
 
 int main() {
 
