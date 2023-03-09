@@ -27,9 +27,13 @@ class Calculation {
         return temp;
     }
 
-    void operator ++ () {
-        // i=0;
+    void operator++() {
         a++;
+    }
+
+    void operator++(int i) {
+        a++;
+        i++;
     }
 
     void operator ~ () {
